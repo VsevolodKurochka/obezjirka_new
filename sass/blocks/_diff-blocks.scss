@@ -171,6 +171,7 @@ End:  BUTTON
 }
 .legs{
   @include bg("../img/legs.jpg", 0 0, no-repeat, cover);
+  margin-bottom: 100px;
 }
 .border{
   &-b{
@@ -255,5 +256,18 @@ End:  BUTTON
     @include resp-max(md){
       margin-top: 15px;
     }
+  }
+}
+.arrow{
+  &-top{
+
+  }
+  &-bottom{
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin-left: -80px;
+    border: 80px solid transparent;
+    border-top: 80px solid #f6f6f6;
   }
 }

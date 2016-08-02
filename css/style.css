@@ -1545,6 +1545,7 @@ End:  BUTTON
 .legs {
   background: url("../img/legs.jpg") 0 0 no-repeat;
   background-size: cover;
+  margin-bottom: 100px;
 }
 
 .border-b {
@@ -1621,6 +1622,15 @@ End:  BUTTON
   .programm-oh {
     margin-top: 15px;
   }
+}
+
+.arrow-bottom {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-left: -80px;
+  border: 80px solid transparent;
+  border-top: 80px solid #f6f6f6;
 }
 
 /* ===================== 
