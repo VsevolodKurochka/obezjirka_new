@@ -1,0 +1,96 @@
+.ttu{
+  text-transform: uppercase;
+}
+.h{
+  &2{
+    @extend .ttu;
+  }
+  &1{
+    line-height: 1.1;
+    margin: 25px 0;
+    @extend .light;
+    .special{
+      display: block;
+      margin-top: 25px;
+    }
+  }
+  &2{
+    @extend .regular;
+    font-weight: 100;
+  }
+  &3{
+    text-align: center;
+  }
+}
+.subtitle{
+  //@include color("blue-light");
+}
+.column-title{
+  @include color("green");
+  margin-bottom: 30px;
+}
+@include resp-min(sm){
+  .h1{
+    @include size(small_title);
+  }
+  .h2{
+    @include size(text_big);
+  }
+  .h3{
+    margin-bottom: 100px;
+  }
+  .subtitle{
+    @include size(text_big);
+    margin-bottom: 45px;
+  }
+}
+@include resp-min(md){
+  .h3{
+    @include size(normal_title);
+    &.small-title{
+      @include size(small_title);
+    }
+  }
+  .column-title{
+    @include size(small_title);
+  }
+}
+@include resp-max(md){
+  .h3{
+    @include size(default_title);
+  }
+  .column-title{
+    text-align: center;
+    @include size(text_title);
+  }
+}
+@include resp-max(sm){
+  .h1{
+    @include size(text_big);
+    margin: 15px 0;
+  }
+  .h2{
+    @include size(text_default);
+    margin: 15px 0;
+  }
+  .h3{
+    @include size(normal_title);
+    margin-bottom: 50px;
+  }
+  .subtitle{
+    @include size(text_default);
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+@include resp-max(xs){
+  .h1{
+    @include size(text_default);
+  }
+  .h2{
+
+  }
+  .h3{
+    @include size(text_title);
+  }
+}

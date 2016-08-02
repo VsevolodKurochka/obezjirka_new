@@ -1,0 +1,29 @@
+/* ===================== 
+Start: Connect fonts      
+======================== */
+// @include connect-font(ProximaRegular,regular);
+// @include connect-font(ProximaBold,bold);
+// @include connect-font(ProximaLight,light);
+// @include connect-font(ProximaBlack,black_font);
+.light,
+.regular,
+.bold,
+.sans{
+	font-family: 'Open Sans', sans-serif;
+}
+.light{	
+  	font-weight: 100;
+}
+.condenced-bold,
+.bold{
+	font-weight: 700;
+}
+.condenced{
+	font-family: 'Open Sans Condensed', sans-serif;
+	&-bold{
+		font-family: 'Open Sans Condensed', sans-serif;
+	}
+}
+/* =====================
+End:  Connect fonts
+======================== */

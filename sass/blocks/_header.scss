@@ -1,0 +1,168 @@
+		
+/* ===================== 
+Start: HEADER      
+======================== */
+.header {
+	@extend .cf;
+	padding: 10px 0 25px;
+	
+	background-color: #f7f7f7;
+	overflow: hidden;
+	min-height: 550px;
+	@include resp-min(sm){
+		min-height: 680px;
+	}
+	@include resp-min(lg){
+		@include bg('../img/header.jpg', right top, no-repeat);
+		&-text{
+			position: relative;
+			top: 50px;
+		}
+	}
+	&-girls{
+		position: absolute;
+		left: 50%;
+		top: 50px;
+		@include resp-min(xs){
+			width: 360px;
+			margin-left: -180px;
+		}
+		@include resp-max(xs){
+			width: 280px;
+			margin-left: -140px;
+		}
+	}
+	&-menu{
+		& *{
+			color: inherit;
+		}
+		transition: all ease .5s;
+		ul{
+			li{
+				display: block;
+       			vertical-align: middle;	
+				a{
+					text-decoration: none;
+					position: relative;
+					&:after{
+						content: "";
+						position: absolute;
+						top: 100%;
+						left: 0;
+						width: 0;
+						height: 1px;
+						background-color: map-get($colors,corporative);
+    					transition: all ease .5s;
+    					border-radius: 10px;
+					}
+					&:hover{
+						&:after{
+							width: 100%;
+						}
+					}
+				}
+				@include resp-min(md){
+					padding: 25px 40px;
+					display: inline-block;
+				}
+				@include resp-min(lg){
+					padding-left: 50px;
+					padding-right: 50px;
+					&:first-child{
+	       				padding-left: 0;
+	       			}
+					a{
+						@include size(text_title);
+					}
+				}
+			}
+		}
+	}
+	&-container-text{
+		@include resp-min(sm){
+			margin-top: 50px;
+		}
+		@include color("white");
+	}
+}
+@include resp-min(md){
+	.navbar-toggle{
+		display: none;
+		position: relative;
+	}
+	.header{			
+		&-phone{
+			float: right;
+		}
+	}
+}
+@include resp-max(md){
+	.header{
+		&-menu{
+		    display: block;
+		    width: 200px;
+		    position: fixed;
+		    right: -200px;
+		    top: 30px;
+		    background-color: #ddd;
+		    z-index: 10;
+		    padding: 10px 0;
+		    &-open{
+		    	right: 0;
+		    	left: auto;
+		    	overflow-y: auto;
+			}
+			li{
+				a{
+					display: block;
+					padding: 15px 0;
+				}
+			}
+		}
+		&-phone, &-menu{
+			@include resp-max(md){
+				text-align: center;
+			}
+		}
+	}
+	.navbar-toggle{
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 11;		
+	}
+}
+.navbar-toggle{
+    float: right;
+    padding: 9px 10px;
+    background-color: #EAEAEA;
+    border: none;
+    border-radius: 4px;
+    &-open{
+    	.icon-bar-1{
+		    transform: rotate(45deg) translate(5px,5px);
+    	}
+    	.icon-bar-2{
+			opacity: 0;
+    	}
+    	.icon-bar-3{
+			transform: rotate(-45deg) translate(4px, -3px);
+    	}
+    }
+	.icon-bar{
+	    display: block;
+	    width: 22px;
+	    height: 2px;
+	    border-radius: 1px;
+        background-color: #888;
+        transition: all ease .25s;
+        transform-origin: 50% 100%;
+	}
+	.icon-bar:not(.icon-bar-1){
+		margin-top: 4px;
+	}
+}
+/* =====================
+End:  HEADER
+======================== */
+
