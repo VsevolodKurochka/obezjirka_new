@@ -1,3 +1,23 @@
+.vertical-image{
+  &:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;   
+  }
+  img{
+   max-height: 100%;
+    vertical-align: middle;   
+  }
+}
+@for $i from 4 through 5{
+  .mt-#{$i}{
+    margin-top: 5px * $i;
+  }
+  .mb-#{$i}{
+    margin-bottom: 5px * $i;
+  }
+}
 /* ===================== 
 Start: BUTTON      
 ======================== */
@@ -74,6 +94,35 @@ End:  BUTTON
       }
     }
   }
+  &-check{
+    &-orange{
+      li{
+        &:after{
+          width: 17px;
+          height: 16px;
+          @include bg("../img/checkOrange.png", 0 0, no-repeat, cover);
+        }
+      }
+    }
+    @include resp-min(sm){
+      li{
+        padding-left: 25px;
+        &:after{
+          top: 50%;
+          margin-top: -8px;
+        }
+      }
+    }
+    @include resp-max(sm){
+      li{
+        padding-top: 15px;
+        margin-bottom: 15px;
+        &:after{
+          top: 0;
+        }
+      }
+    }
+  }
 }
 .step{
   &-w{
@@ -117,6 +166,94 @@ End:  BUTTON
   @include resp-max(xs){
     &-b{
       text-align: center;
+    }
+  }
+}
+.legs{
+  @include bg("../img/legs.jpg", 0 0, no-repeat, cover);
+}
+.border{
+  &-b{
+    border: 5px solid #9dede8;
+    padding: 15px;
+    @include resp-min(lg){
+      padding: 25px;
+    }
+    &-big-p{
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    @include resp-max(sm){
+      .subtitle{
+        text-align: center;
+      }
+    }
+  }
+}
+.formula{
+  &-b{
+    display: inline-block;
+    padding: 0 25px;
+    @extend %relative;
+    @include resp-max(md){
+      @include resp-min(sm){
+        width: 50%;
+        margin-top: 7.5px;
+        margin-bottom: 7.5px;
+        margin-left: -0.5em;
+      }
+    }
+
+    &-img{
+      height: 50px;
+      margin-bottom: 15px;
+      @extend .vertical-image;
+    }
+    &-plus,
+    &-equally{
+      &:after{
+        position: absolute;
+        font-size: inherit;
+        color: inherit;
+        bottom: 0;
+        right: -10px;
+      }
+    }
+    &-plus{
+      &:after{
+        content: "+";
+      }
+    }
+    &-equally{
+      &:after{
+        content: "=";
+      }
+    }
+    @include resp-max(sm){
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      &:last-child{
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      &-plus,
+      &-equally{
+        &:after{
+          left: 50%;
+          right: auto;
+          margin-left: -5px;
+        }
+      }
+    }
+  }
+}
+.programm{
+  &-oh{
+    @include resp-min(sm){
+      min-height: 320px;
+    }
+    @include resp-max(md){
+      margin-top: 15px;
     }
   }
 }

@@ -17,16 +17,16 @@ Start: Connect fonts
 .medium{
 	font-weight: 600;
 }
-.condenced-bold,
+
 .bold{
 	font-weight: 700;
 }
-.condenced{
-	font-family: 'Open Sans Condensed', sans-serif;
-	&-bold{
-		font-family: 'Open Sans Condensed', sans-serif;
-	}
-}
+// .condenced{
+// 	font-family: 'Open Sans Condensed', sans-serif;
+// 	&-bold{
+// 		font-family: 'Open Sans Condensed', sans-serif;
+// 	}
+// }
 /* =====================
 End:  Connect fonts
 ======================== */
