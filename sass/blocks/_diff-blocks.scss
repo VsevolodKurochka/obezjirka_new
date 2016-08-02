@@ -52,56 +52,6 @@ Start: BUTTON
 /* =====================
 End:  BUTTON
 ======================== */
-    
-/* ===================== 
-Start: TOGGLER      
-======================== */
-.toggle{
-  &-subtitle-no-margin{
-    .subtitle{
-      margin-bottom: 0;
-    }
-  }
-  &-inner{
-    @extend .cf;
-    @include resp-min(sm){
-      &-big-margin{
-       margin-bottom: 150px;
-        &:last-child{
-          margin-bottom: 75px;
-        }
-      }
-      &-small-margin{
-        margin-bottom: 50px;
-        &:last-child{
-          margin-bottom: 0;
-        }
-      }
-    }
-    &-img{
-      @extend .block-center;
-    }
-  }
-  @include resp-min(sm){
-    //ODD - нечетное
-    .toggle-inner-right:nth-child(odd) .toggle-inner-img,
-    .toggle-inner-right:nth-child(even) .toggle-inner-text,
-    .toggle-inner-left:nth-child(odd) .toggle-inner-text,
-    .toggle-inner-left:nth-child(even).toggle-inner-img {      
-        float: right;
-    }
-    .toggle-inner-right:nth-child(even){
-      .toggle-inner-text{
-        .subtitle,p{
-          text-align: right;
-        }
-      }
-    }   
-  }
-}
-/* =====================
-End:  TOGGLER
-======================== */
 .list{
   li{
     position: relative; 
@@ -124,22 +74,49 @@ End:  TOGGLER
       }
     }
   }
-  &-cancel{
-    li{
-      @include resp-min(sm){
-        padding-left: 50px;
+}
+.step{
+  &-w{
+    margin-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &-b{
+    position: relative;
+    &-num{
+      font-size: 85px;
+      @include resp-min(md){
+        font-size: 130px;
       }
-      @include resp-max(sm){
-        padding-top: 40px;
-        &:after{
-          margin-left: -18.5px;
-        }
+      @extend .bold;
+      &-purple{
+        color: #b1b9fc;
       }
-      &:after{
-        width: 37px;
-        height: 37px;
-        @include bg("../img/cancel.png", 0 0, no-repeat, cover);
+      &-ocean{
+        color: #9dede8;
       }
+      &-blue{
+        color: #b5e5fb;
+      }
+    }
+  }
+  @include resp-min(xs){
+    &-w{
+      margin-bottom: 50px;
+    }
+    &-b{
+      padding-left: 90px;
+      &-num{
+        position: absolute;
+        left: 0;
+        top: -45px;
+      }
+    }
+  }
+  @include resp-max(xs){
+    &-b{
+      text-align: center;
     }
   }
 }

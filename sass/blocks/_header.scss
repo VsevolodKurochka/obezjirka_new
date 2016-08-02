@@ -66,11 +66,8 @@ Start: HEADER
 					display: inline-block;
 				}
 				@include resp-min(lg){
-					padding-left: 50px;
-					padding-right: 50px;
-					&:first-child{
-	       				padding-left: 0;
-	       			}
+					width: 25%;
+					margin-left: -0.5em;
 					a{
 						@include size(text_title);
 					}
