@@ -72,6 +72,12 @@ Start: BUTTON
       background-color: #bbf2ef;
     }
   }
+  &-blue{
+    background-color: #a9e0fb;
+    &:before{
+      background-color: #bbf2ef;
+    }
+  }
   &-single{
     @include resp-min(sm){
       margin-top: 70px;
@@ -327,7 +333,7 @@ End:  BUTTON
   &-bottom{
     position: absolute;
     left: 50%;
-    top: 100%;
+    top: calc(100% - 10px);
     margin-left: -80px;
     border: 80px solid transparent;
     border-top: 80px solid #f6f6f6;
@@ -614,7 +620,9 @@ End:  BUTTON
       cursor: pointer;
     }
     &-title{
-      font-size: 25px;
+      @include resp-min(sm){
+        font-size: 25px;  
+      }
       position: relative;
       padding-left: 30px;
       &:after{

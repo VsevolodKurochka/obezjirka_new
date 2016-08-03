@@ -34,16 +34,16 @@
 					<div class="col-xs-6 col-md-10 header-menu">
 						<ul>
 							<li>
-								<a class="anchor" href="">О программе</a>
+								<a class="anchor" href="#about_programm">О программе</a>
 							</li>
 							<li>
-								<a class="anchor" href="">Тренера</a>
+								<a class="anchor" href="#treners">Тренера</a>
 							</li>
 							<li>
-								<a class="anchor" href="">Гарантии</a>
+								<a class="anchor" href="#garant">Гарантии</a>
 							</li>
 							<li>
-								<a class="anchor" href="">Регистрация</a>
+								<a class="anchor" href="#price">Регистрация</a>
 							</li>
 						</ul>
 					</div><!-- /.header-menu -->
@@ -205,7 +205,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="bg-grey">
+		<section id="treners" class="bg-grey">
 			<div class="row">
 				<div class="container">
 					<h3 class="h3 medium">Будем знакомы: </h3>
@@ -505,28 +505,119 @@
 		</footer>
 	</main>
 <!-- <button class="btn btn-effect btn-orange" type="button" data-toggle="modal" data-target="#modal_form">Принять участие</button> -->
-<div class="modal fade" id="modal_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
+<div class="modal fade in" id="modal_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-dialog-big" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Оставьте свои данные</h4>
-        <p class="modal-p"></p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="text-center modal-title" id="myModalLabel">Оставьте свои данные, чтобы принять участие в программе</h4>
+        <p class="text-center modal-p">Не откладывайте свою стройность на потом.<br>Начните свой путь к мечте уже прямо сейчас.</p>
       </div>
       <div class="modal-body">
-		<form action="" class="main-form">
-			<input type="text" placeholder="Имя">
-			<input type="text" placeholder="E-mail">
-			<input type="text" placeholder="Телефон">
-			<button class="btn btn-effect btn-orange">Получить! </button>
-		</form>
-      </div>
+		<div class="modal-tabs">
+		  <!-- Nav tabs -->
+		  <p class="text-center modal-tabs-title">Выберите программу: </p>
+		  <p class="text-center modal-small-title">Нажав на одну из кнопок</p>
+		  <ul class="nav nav-tabs nav-tabs-modal" role="tablist">
+		    <!-- <li role="presentation" class="active"><a href="#form_default" aria-controls="form_default" role="tab" data-toggle="tab">form_default</a></li> -->
+		    <li role="presentation" class="active">
+		    	<a href="#form_week" aria-controls="form_week" role="tab" data-toggle="tab" aria-expanded="true">КУРс “28 дней”
+		    	</a>
+	    	</li>
+		    <li role="presentation" class="">
+		    	<a href="#form_month" aria-controls="form_month" role="tab" data-toggle="tab" aria-expanded="false">КУРс “56 дней”
+	    		</a>
+	    	</li>
+		    <li role="presentation" class="">
+		    	<a href="#form_threemonth" aria-controls="form_threemonth" role="tab" data-toggle="tab" aria-expanded="false">КУРс “16 дней”
+		    	</a>
+	    	</li>
+		  </ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <!-- <div role="tabpanel" class="tab-pane active" id="form_default">...</div> -->
+		    <div role="tabpanel" class="tab-pane fade active in" id="form_week">
+		    	<p class="modal-tab-title">стомость курса:</p>
+		    	<div class="text-center">
+		    		<p class="modal-price">28 у.е.</p>
+		    	</div>
+		    	<!-- ONEWEEK FORM KAMPANIYA obezjurka-->
+				<form class="main-form" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+					<!-- Имя -->
+					<input type="text" name="first_name" placeholder="Имя">
+					<!-- Поле Email (обязательно) -->
+					<input type="email" name="email" placeholder="E-mail">
+					<input name="custom_phone" type="text" value="" placeholder="Телефон" class="form-phone">
+					<!-- API ID -->
+					<!-- Получить API ID на: https://app.getresponse.com/campaign_list.html -->
+					<input type="hidden" name="campaign_token" value="p0Vvc">
+					<!-- Страница благодарности (по желанию) -->
+					<input type="hidden" name="thankyou_url" value="http://obezjurka.com/oneweek/">
+					<!-- Forward form data to your page (optional) -->
+					<input type="hidden" name="forward_data" value="post">
+					<!-- Кнопка подписаться -->
+					<input class="btn btn-effect btn-blue" type="submit" value="Получить!">
+				</form>
+				<!-- END ONEWEEK FORM -->
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="form_month">
+		    	<p class="modal-tab-title">стомость курса:</p>
+		    	<div class="text-center">
+		    		<p class="modal-price">46 у.е.</p>
+		    	</div>
+		    	<!-- ONEMONTH FORM KAMPANIYA obezjurka-->
+				<form class="main-form" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+					<!-- Имя -->
+					<input type="text" name="first_name" placeholder="Имя">
+					<!-- Поле Email (обязательно) -->
+					<input type="email" name="email" placeholder="E-mail">
+					<input name="custom_phone" type="text" value="" placeholder="Телефон" class="form-phone">
+					<!-- API ID -->
+					<!-- Получить API ID на: https://app.getresponse.com/campaign_list.html -->
+					<input type="hidden" name="campaign_token" value="p0Vhl">
+					<!-- Страница благодарности (по желанию) -->
+					<input type="hidden" name="thankyou_url" value="http://obezjurka.com/thx_onemonth/">
+					<!-- Forward form data to your page (optional) -->
+					<input type="hidden" name="forward_data" value="post">
+					<!-- Кнопка подписаться -->
+					<input class="btn btn-effect btn-blue" type="submit" value="Получить!">
+				</form>
+				<!-- END ONEMONTH FORM -->
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="form_threemonth">
+		    	<p class="modal-tab-title">стомость курса:</p>
+		    	<div class="text-center">
+		    		<p class="modal-price">16 у.е.</p>
+		    	</div>
+		    	
+		    	<!-- THREE FORM KAMPANIYA obezjurka-->
+				<form class="main-form" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+					<!-- Имя -->
+					<input type="text" name="first_name" placeholder="Имя">
+					<!-- Поле Email (обязательно) -->
+					<input type="email" name="email" placeholder="E-mail">
+					<input name="custom_phone" type="text" value="" placeholder="Телефон" class="form-phone">
+					<!-- API ID -->
+					<!-- Получить API ID на: https://app.getresponse.com/campaign_list.html -->
+					<input type="hidden" name="campaign_token" value="p0VYz">
+					<!-- Страница благодарности (по желанию) -->
+					<input type="hidden" name="thankyou_url" value="http://obezjurka.com/thx_threemonth/">
+					<!-- Forward form data to your page (optional) -->
+					<input type="hidden" name="forward_data" value="post">
+					<!-- Кнопка подписаться -->
+					<input class="btn btn-effect btn-blue" type="submit" value="Получить!">
+				</form>
+				<!-- END THREE FORM -->
+		    </div>
+		  </div>
+		</div><!-- /.modal-tabs -->
+      </div><!-- /.modal-body -->
       <div class="modal-footer">
       	<p class="text-left text_very_small">*Ваши данные никогда не будут переданы 3-м лицам</p>
       	<p class="text-left text_very_small">**Количество  мест на ведение и индивидуальные<br>консультации ограничено</p>
       </div>
     </div>
   </div>
-</div>		
+</div>	
 </body>
 </html>

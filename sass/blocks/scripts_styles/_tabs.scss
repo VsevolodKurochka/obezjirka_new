@@ -5,77 +5,34 @@ Start: TAB STYLES
   text-align: center;
 }
 @media (min-width: 992px){
-  .nav-tabs > li {
+  
+}
+.nav-tabs > li {
     display: inline-block;
   } 
+.nav-tabs-modal {
+  margin-bottom: 15px;
 }
-@media (max-width: 991px){
-  .nav-tabs > li{
-    display: block;
+.nav-tabs-modal li a {
+    font-size: 18px;
+    padding: 10px 25px;
+    text-decoration: none;
+    background-color: #ffd6a7;
+    @include color("dark-blue");
+    @extend .bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+@media (max-width: 767px){
+  .nav-tabs-modal li a{
+    min-width: 190px;
+    display: inline-block;
+    border-radius: 4px;
     margin-bottom: 15px;
   }
 }
-.nav-tabs > li > a {
-  margin-right: 2px;
-  line-height: 1.42857143;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
-}
-.nav-tabs > li > a:hover {
-  border-color: #eee #eee #ddd;
-}
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-  color: #555;
-  cursor: default;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
-}
-.nav-tabs.nav-justified {
-  width: 100%;
-  border-bottom: 0;
-}
-.nav-tabs.nav-justified > li {
-  float: none;
-}
-.nav-tabs.nav-justified > li > a {
-  margin-bottom: 5px;
-  text-align: center;
-}
-.nav-tabs.nav-justified > .dropdown .dropdown-menu {
-  top: auto;
-  left: auto;
-}
-@media (min-width: 768px) {
-  .nav-tabs.nav-justified > li {
-    display: table-cell;
-    width: 1%;
-  }
-  .nav-tabs.nav-justified > li > a {
-    margin-bottom: 0;
-  }
-}
-.nav-tabs.nav-justified > li > a {
-  margin-right: 0;
-  border-radius: 4px;
-}
-.nav-tabs.nav-justified > .active > a,
-.nav-tabs.nav-justified > .active > a:hover,
-.nav-tabs.nav-justified > .active > a:focus {
-  border: 1px solid #ddd;
-}
-@media (min-width: 768px) {
-  .nav-tabs.nav-justified > li > a {
-    border-bottom: 1px solid #ddd;
-    border-radius: 4px 4px 0 0;
-  }
-  .nav-tabs.nav-justified > .active > a,
-  .nav-tabs.nav-justified > .active > a:hover,
-  .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #fff;
-  }
+.nav-tabs-modal li.active a {
+  background-color: #a9e0fb;
 }
 .tab-content > .tab-pane {
   display: none;

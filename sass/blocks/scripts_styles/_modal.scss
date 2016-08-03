@@ -160,7 +160,7 @@ Start: MODAL
     margin: 30px auto;
   }
   .modal-dialog-big{
-    width: 600px;
+    width: 700px;
     margin: 30px auto;
   }
   .modal-sm {
@@ -183,6 +183,31 @@ Start: MODAL
 .modal-header:after,
 .modal-footer:after {
   clear: both;
+}
+.modal{
+  &-tabs-title{
+    @extend .ttu;
+    color: #002c56;
+  }
+  &-small-title{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #ff0000;
+  }
+}
+.modal-tab-title {
+    text-align: center;
+    text-transform: uppercase;
+    @extend .bold;
+    margin-bottom: 10px;
+}
+.modal-price {
+    text-align: center;
+    margin-bottom: 15px;
+    display: inline-block;
+    font-size: 20px;
+    background-color: #9dede8;
+    padding: 10px 20px;
 }
 /* =====================
 End:  MODAL

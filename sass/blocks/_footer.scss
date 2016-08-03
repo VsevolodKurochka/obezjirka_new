@@ -13,6 +13,13 @@ Start: START FOOTER
 		padding: 0 15px;
 		display: inline-block;
 		vertical-align: middle;
+		width: 100%;
+		@include resp-max(md){
+			margin-bottom: 30px;
+			@include resp-min(sm){
+				width: 50%;
+			}
+		}
 		@include resp-min(md){
 			width: 25%;
 		}
@@ -21,6 +28,35 @@ Start: START FOOTER
 	&-phone{
 		color: #1e4468;
 		text-decoration: none;
+		position: relative;
+		padding-left: 40px;
+		&:after{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 50%;
+		}
+		@include resp-max(sm){
+		    text-align: right;
+		    width: 230px;
+		    display: inline-block;
+		}
+	}
+	&-email{
+		&:after{
+			width: 30px;
+			height: 30px;
+			margin-top: -15px;
+			@include bg("../img/email.png", 0 0, no-repeat,cover);
+		}
+	}
+	&-phone{
+		&:after{
+			width: 29px;
+			height: 29px;
+			margin-top: -14.5px;
+			@include bg("../img/phone.png", 0 0, no-repeat,cover);
+		}
 	}
 }
 .social{
