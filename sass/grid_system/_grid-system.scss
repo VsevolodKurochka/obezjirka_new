@@ -3,13 +3,13 @@ Start: COLUMNS
 ======================== */
 @include make-column(xs,"not-push","not-pull","not-offset");
 @include resp-min(sm){
-  @include make-column(sm,"push","pull","offset");
+  @include make-column(sm,"not-push","not-pull","not-offset");
 }
 @include resp-min(md){
-  @include make-column(md,"push","pull","offset");
+  @include make-column(md,"not-push","not-pull","not-offset");
 }
 @include resp-min(lg){
-  @include make-column(lg,"push","pull","offset");
+  @include make-column(lg,"not-push","not-pull","not-offset");
 }
 
 /* =====================
@@ -38,7 +38,14 @@ Start: HIDDEN AND VISIBLE UTILITIES
 /* =====================
 End:  HIDDEN AND VISIBLE UTILITIES
 ======================== */
-    
+.no{
+  &-mb{
+    margin-bottom: 0;
+  }
+  &-mt{
+    margin-top: 0;
+  }
+}    
 
 .min-height{
   min-height: 1px;

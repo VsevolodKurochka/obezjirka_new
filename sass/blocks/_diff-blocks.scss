@@ -67,11 +67,19 @@ Start: BUTTON
     @include resp-max(sm){
       margin-top: 35px;
     }
+    &.no-mt{
+      @extend .no-mt;
+    }
   }
 }
 /* =====================
 End:  BUTTON
 ======================== */
+.bg{
+  &-grey{
+    background-color: #f6f6f6;
+  }
+}
 .list{
   li{
     position: relative; 
@@ -269,5 +277,114 @@ End:  BUTTON
     margin-left: -80px;
     border: 80px solid transparent;
     border-top: 80px solid #f6f6f6;
+  }
+}
+.motiv{
+  &-b{
+    @extend .text-center;
+    @include resp-min(sm){
+      min-height: 250px;
+    }
+    @include resp-max(md){
+      margin-bottom: 30px;
+    }
+    &-img{
+      height: 80px;
+      margin-bottom: 15px;
+      @extend .vertical-image;
+    }
+  }
+}
+.team{
+  &-b{
+    &-name,
+    &-pos,
+    &-img{
+      @extend .text-center;
+    }
+    &-name{
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+    &-pos{
+      font-size: 20px;
+      @extend .medium;
+      @include resp-min(md){
+        @include resp-max(lg){
+          min-height: 60px;
+        }
+      }
+    }
+    
+    &-img{
+      margin: 35px 0;
+      img{
+        border-radius: 100%;
+        border: 8px solid #fff;
+        animation-name: team-img;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+    }
+    &-text{
+      @extend .max-md-center;
+    }
+    &-w{
+      &:nth-child(1){
+        .team-b-img{
+          img{
+            animation-delay: 0s;
+          }
+        }
+      }
+      &:nth-child(2){
+        .team-b-img{
+          img{
+            animation-delay: 1s;
+          }
+        }
+      }
+      &:nth-child(3){
+        .team-b-img{
+          img{
+            animation-delay: 1.5s;
+          }
+        }
+      }
+
+    }
+    @include resp-max(md){
+      &-w{
+        margin-bottom: 30px;
+      }  
+    }
+    &:hover{
+      .team-b-img{
+        img{
+          
+        }
+      }
+    }
+  }
+}
+@keyframes team-img{
+  0%,100%{
+    transform: rotate(0deg);
+  }
+  20%{
+    transform: rotate(1deg);
+    border-color: rgba(169, 224, 251, 0.21);
+  }
+  40%{
+    transform: rotate(-1deg);
+  }
+  60%{
+    transform: rotate(1deg);
+    border-color: rgba(177, 185, 252, 0.30);
+  }
+  80%{
+    transform: rotate(-1deg);
   }
 }
