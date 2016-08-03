@@ -6,7 +6,7 @@ Start: COLUMNS
   @include make-column(sm,"not-push","not-pull","not-offset");
 }
 @include resp-min(md){
-  @include make-column(md,"not-push","not-pull","not-offset");
+  @include make-column(md,"not-push","not-pull","offset");
 }
 @include resp-min(lg){
   @include make-column(lg,"not-push","not-pull","not-offset");
@@ -77,12 +77,37 @@ End:  HIDDEN AND VISIBLE UTILITIES
 .row{
   @extend .cf;
 }
+.row-flex{
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.column-flex{
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  @extend %global-block;
+}
 [class*="col-"] {
   @extend %global-block;
   float: left;
   .h3{
     text-align: left;
-    margin-bottom: 15px;
   }
 }
 
